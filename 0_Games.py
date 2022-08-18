@@ -35,7 +35,7 @@ st.markdown("""
             
             You might encounter some bugs from time to time in this app but don't worry, they do not affect the normal
             functioning of it. If that happens, try to refresh the app since these bugs are caused by streamlit. Sometimes 
-            the layout and the element positioning can be a bit unstable and have and undesired behaviour, however the
+            the layout and the element positioning can be a bit unstable and have an undesired behaviour, however the
             app will continue running and you can still interact with it.
             
             With that being said, it is time for you to explore the app. :smile:
