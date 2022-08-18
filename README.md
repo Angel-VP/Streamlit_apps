@@ -1,2 +1,2 @@
-# Streamlit_apps
-Streamlit apps
+# Streamlit Games app
+Games app
