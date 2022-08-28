@@ -13,7 +13,7 @@ import time
 st.set_page_config(page_title='Games',
                    page_icon='four_leaf_clover',
                    layout='centered',
-                   initial_sidebar_state='collapsed'
+                   initial_sidebar_state='expanded'
                    )
 
 # Title
@@ -22,16 +22,20 @@ st.title('Welcome to the minigames on streamlit app!!! :four_leaf_clover: :heart
 # more text
 st.subheader('Have fun and enjoy the games :grin:')
 
-st.markdown('### Let the fun begin :rocket:')
-
 
 st.markdown("""
-            If you want, you are more than welcome to create more games and add them to the list. In the meantime, 
-            you can play with the ones that are available and check the code to see how they have been done.
+            Hi! You have reached the games application built with Streamlit. On your left you will find some games
+            to check the capabilities of the Streamlit library for Python.
             
-            All these games have been developed using python with streamlit functionalities. Streamlit is an open
-            source web development library which is thought to be used to develop and share with others quick reports 
-            and dashboards in a fast and easy way.
+            If you want, you are more than welcome to create more games and add them to the list. In the meantime, 
+            you can play with the ones that are available and check the source code to see how they have been done.
+            
+            All these games have been developed only with Python using streamlit functionalities. Streamlit is an open
+            source web development library which is commonly be used for developing quick reports and dashboards 
+            and share them with others in a fast and easy way.
+            
+            This application can be hosted in several platform, such as native sharing streamlit platform, Heroku,
+            AWS... to name some.
             
             You might encounter some bugs from time to time in this app but don't worry, they do not affect the normal
             functioning of it. If that happens, try to refresh the app since these bugs are caused by streamlit. Sometimes 
@@ -40,3 +44,6 @@ st.markdown("""
             
             With that being said, it is time for you to explore the app. :smile:
             """)
+
+st.markdown('### Let the fun begin :rocket:')
+
