@@ -17,7 +17,7 @@ from game_functions import full_rows, game_over, gain_table, row_candidates_to_f
 st.set_page_config( page_title='TicTacToe',
                     page_icon=':o:',
                     layout='centered',
-                    initial_sidebar_state='collapsed'
+                    initial_sidebar_state='expanded'
                     )
 
 # Title
