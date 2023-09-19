@@ -195,18 +195,18 @@ def box_to_fill(board_s, row_candidates, diff):
         if board_s['p5']=='' and (('R2' in row_candidates) or ('C2' in row_candidates) or ('D1' in row_candidates) or ('D2' in row_candidates)):
             return 5
         
-        # 2- fill corners
-        if board_s['p1']=='' or board_s['p3']=='' or board_s['p7']=='' or board_s['p9']=='':
-            for cand in row_candidates:
-                if cand not in ['R2','C2']:
-                    row = board_positions[cand]
-                    i=0
-                    while i < len(row):
-                        if row[i] == '' and i!=1:
-                            solution_key = cand + '-' + str(i)
-                            return(box_positions[solution_key])
-                        else:
-                            i = i + 1
+        # # 2- fill corners
+        # if board_s['p1']=='' or board_s['p3']=='' or board_s['p7']=='' or board_s['p9']=='':
+        #     for cand in row_candidates:
+        #         if cand not in ['R2','C2']:
+        #             row = board_positions[cand]
+        #             i=0
+        #             while i < len(row):
+        #                 if row[i] == '' and i!=1:
+        #                     solution_key = cand + '-' + str(i)
+        #                     return(box_positions[solution_key])
+        #                 else:
+        #                     i = i + 1
         
         # 3- fill corners
         for cand in row_candidates:
