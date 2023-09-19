@@ -16,8 +16,8 @@ from game_functions import option_from_bet_type, player_win
 # initial configuration for the pagee
 st.set_page_config( page_title='Roulette',
                     page_icon=':ferris_wheel:',
-                    layout='centered',
-                    initial_sidebar_state='collapsed'
+                    layout='wide',
+                    initial_sidebar_state='collapsed',
                     )
 
 # Title
@@ -134,7 +134,26 @@ if st.session_state['spin'] == True:
     
 # roulette board
 else:
-    st.image('aux_files/roulette_board.jpg')
+    cr1, cr2 = st.columns((2,1))
+    with cr1:
+        for e in range(0,6):
+            st.write("")
+        st.image('aux_files/roulette_board.jpg')
+    with cr2:
+        st.markdown('#### Roulette Bets & Payouts')
+        
+        df = pd.DataFrame({'Bets':possible_bets[1:], 'Payouts':['35:1','17:1','11:1','8:1','5:1', '2:1', '2:1', '1:1', '1:1', '1:1']})
+        # CSS to inject contained in a string
+        hide_table_row_index = """
+                                <style>
+                                thead tr th:first-child {display:none}
+                                tbody th {display:none}
+                                </style>
+                                """
+        # Inject CSS with Markdown
+        st.markdown(hide_table_row_index, unsafe_allow_html=True)
+        st.dataframe(df.style.set_table_attributes('style="width: 1%; max-height: 200px; font-size: 10px; "'), hide_index=True)
+        # st.table(df)
     
     
 ##################################
@@ -293,18 +312,3 @@ if clear_2:
     for key in st.session_state.keys():
         del st.session_state[key]
     st.experimental_rerun()
-
-###################################
-## Roulette Bets & Payouts Table
-st.markdown('#### Roulette Bets & Payouts')
-df = pd.DataFrame({'Bets':possible_bets[1:], 'Payouts':['35:1','17:1','11:1','8:1','5:1', '2:1', '2:1', '1:1', '1:1', '1:1']})
-# CSS to inject contained in a string
-hide_table_row_index = """
-            <style>
-            thead tr th:first-child {display:none}
-            tbody th {display:none}
-            </style>
-            """
-# Inject CSS with Markdown
-st.markdown(hide_table_row_index, unsafe_allow_html=True)
-st.table(df)
